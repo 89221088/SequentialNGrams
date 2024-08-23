@@ -3,6 +3,8 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args){
+        long startTime = System.currentTimeMillis();
+
         try {
             System.out.println("Welcome to sequential mode!");
             System.out.print("Enter the file name: ");
@@ -50,6 +52,15 @@ public class Main {
                 // Writing the weight (elements) to the file
                 writer.write("Weight: " + elements);
                 writer.newLine(); // New line
+                long endTime = System.currentTimeMillis();
+
+                // Calculate the time difference
+                long duration = endTime - startTime;
+               System.out.println("Execution time in milliseconds: " + duration);
+
+                writer.write("execution time: " + duration);
+                writer.newLine();
+
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -60,5 +71,8 @@ public class Main {
         } catch (Exception ex) {
             ex.printStackTrace();
         }
+        // Record the end time
+
+
     }
 }
